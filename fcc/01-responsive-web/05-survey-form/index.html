@@ -17,7 +17,7 @@
         </fieldset>
         <fieldset>
             <select id="dropdown">
-                <option value="0">Choose your country</option>
+                <option value="0">Where are you from?</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -265,16 +265,19 @@
             </select>
         </fieldset>
         <fieldset>
+            <label>Newsletter</label>
             <label>Would you like to subscribe to our newsletter?</label>
-            <input type="radio" name="subscription" value="yes" checked>yes
-            <input type="radio" name="subscription" value="no">no
+            <input type="radio" name="subscription" value="yes" checked class="inline">yes
+            <input type="radio" name="subscription" value="no" class="inline">no
             <label>Please check your topics of interest</label>
-            <label><input type="checkbox" value="general" checked>General newsletter</label>
-            <label><input type="checkbox" value="humour">Humour newsletter</label>
+            <label><input type="checkbox" value="general" checked class="inline">General newsletter</label>
+            <label><input type="checkbox" value="humour" class="inline">Humour newsletter</label>
+            <label><input type="checkbox" value="jobs" class="inline">Open positions</label>
+            <label><input type="checkbox" value="events" class="inline">Events</label>
         </fieldset>
         <fieldset>
-            <label>Comments or whishes</label>
-            <textarea cols="30" rows="3" placeholder="Any comments or whishes come here"></textarea>
+            <label>Comments</label>
+            <textarea cols="40" rows="5" placeholder="Any comments or whishes come here"></textarea>
         </fieldset>
         <button type="submit" id="submit" value="submit">Submit</button>
     </form>
