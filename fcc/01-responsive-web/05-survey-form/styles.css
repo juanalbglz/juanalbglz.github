@@ -1,5 +1,6 @@
 body {
     width: 30vw;
+    min-width: 300px;
     height: 100vh;
     margin: 0 auto;
     background-color: #132f45e3;
