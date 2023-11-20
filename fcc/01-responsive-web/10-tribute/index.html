@@ -5,24 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tribute to the unknown persons</title>
     <link rel="stylesheet" href="styles.css">
+	<script type="text/javascript">
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+	</script>
 </head>
 <body>
-    <main id="nain">
+    <main id="main">
         <header>
-            <h1 id="title">Tribute to the unknown persons</h1>
+            <h1 id="title">Tribute to the unsplash random image</h1>
             <nav>
                 <ul>
-                    <li>The Unknown man</li>
-                    <li>The History</li>
-                    <li>Do you know one?</li>
+                    <li><a href='#' onclick='showlayer('tribute-info')'>Get an unsplash random image</a></li>
+                    <li><a href='#' onclick='showlayer('tribute-info-2')'>Get the window height and width</a></li>
+                    <li><a href='#' onclick='showlayer('tribute-info-3')'>Make the image visible as a background image</a></li>
                 </ul>
             </nav>
     </header>
-    <figure id="img-div"><img src="" alt=""></figure>
-    <section id="tribute-info"></section>
+    <figure id="img-div">
+		<!--<img src='https://source.unsplash.com/random/1600x780?blue' alt='a random image' id='image'>-->
+		
+		<script type="text/javascript">
+		document.write("<img src='https://source.unsplash.com/random/"+w+"x"+h+"?blue' alt='a random image' id='image'>")
+		</script>
+		
+        
+        <figcaption id="img-caption">Random image from unsplash</figcaption>
+    </figure>
+    <section id="tribute-info">
+		<p>If you want to get an image from Unsplash, you can copy URL address link directly by right click from Unsplash website and you can use this URL to put in to somewhere you wish to use. For example, background-image in CSS code, img tag in HTML, etc.</p>
+		<p>Also, besides that you designate specific URL on the code, you can get image randomly by using https://source.unsplash.com/random URL address. This URL would literally pick a random photo from their collection and useful.</p>
+		<p>Also you can add some filters to this URL. For example, https://source.unsplash.com/random?blue sky means pick random image from blue sky images in collection. Does it sound cool, right?</p>
+
+</section>
+		
+	<section id="tribute-info-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste illo fugiat veritatis repudiandae eaque quasi ut atque nobis sit ea assumenda, illum voluptatibus, quos eligendi! Ipsam soluta tempore sed tenetur?</section>
+	
+	<section id="tribute-info-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste illo fugiat veritatis repudiandae eaque quasi ut atque nobis sit ea assumenda, illum voluptatibus, quos eligendi! Ipsam soluta tempore sed tenetur?</section>
     <footer>
-        <a id="tribute-link" target="_blank"></a>
+        <a href="google.com" id="tribute-link" target="_blank">link</a>
     </footer>
     </main>
+	<script defer type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+	<script type="text/javascript">
+	function showlayer(layer){
+			layers = ['tribute-info', 'tribute-info-2', 'tribute-info-3'];
+			for e in layers{
+				document.getElementById(layer).style.visibility = 'hidden';	
+			}
+			document.getElementById(layer).style.visibility = 'visible';
+		}
+	</script>
 </body>
 </html>
