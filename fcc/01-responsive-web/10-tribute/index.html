@@ -16,9 +16,9 @@
             <h1 id="title">Tribute to the unsplash random image</h1>
             <nav>
                 <ul>
-                    <li><a href='#' onclick='showlayer('tribute-info')'>Get an unsplash random image</a></li>
-                    <li><a href='#' onclick='showlayer('tribute-info-2')'>Get the window height and width</a></li>
-                    <li><a href='#' onclick='showlayer('tribute-info-3')'>Make the image visible as a background image</a></li>
+                    <li><a href="#" onclick="showlayer('tribute-info')">Get an unsplash random image</a></li>
+                    <li><a href="#" onclick="showlayer('tribute-info-2')">Get the window height and width</a></li>
+                    <li><a href='#' onclick="showlayer('tribute-info-3')">Make the image visible as a background image</a></li>
                 </ul>
             </nav>
     </header>
@@ -30,31 +30,67 @@
 		</script>
 		
         
-        <figcaption id="img-caption">Random image from unsplash</figcaption>
+        <figcaption id="img-caption">Random blue image from unsplash</figcaption>
     </figure>
     <section id="tribute-info">
 		<p>If you want to get an image from Unsplash, you can copy URL address link directly by right click from Unsplash website and you can use this URL to put in to somewhere you wish to use. For example, background-image in CSS code, img tag in HTML, etc.</p>
-		<p>Also, besides that you designate specific URL on the code, you can get image randomly by using https://source.unsplash.com/random URL address. This URL would literally pick a random photo from their collection and useful.</p>
-		<p>Also you can add some filters to this URL. For example, https://source.unsplash.com/random?blue sky means pick random image from blue sky images in collection. Does it sound cool, right?</p>
+		<p>Also, besides that you designate specific URL on the code, you can get image randomly by using <a href="https://source.unsplash.com/random" target="_blank">https://source.unsplash.com/random</a> URL address. This URL would literally pick a random photo from their collection and useful.</p>
+		<p>Also you can add some filters to this URL. For example, <a href="https://source.unsplash.com/random?blue" target="_blank">https://source.unsplash.com/random?blue</a> sky means pick random image from blue sky images in collection. Does it sound cool, right?</p>
 
 </section>
 		
-	<section id="tribute-info-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste illo fugiat veritatis repudiandae eaque quasi ut atque nobis sit ea assumenda, illum voluptatibus, quos eligendi! Ipsam soluta tempore sed tenetur?</section>
+	<section id="tribute-info-2">
+        <p>Get the window heigth and width by calling a javascript like this:</p><br>
+        <code>
+            &lt;script type="text/javascript"&gt;<br>
+                var w = window.innerWidth;<br>
+                var h = window.innerHeight;<br>
+            &lt;/script&gt;
+        </code><br><br>
+        <p>later on the code you can recall those vars to ask for a specific bg image like this</p>
+        <code><br>
+            &lt;script type="text/javascript"&gt;<br>
+                document.write("&lt;img src='https://source.unsplash.com/random/"+w+"x"+h+"?blue' alt='a random image' id='image'&gt;")<br>
+                &lt;/script&gt;<br>
+        </code>
+
+
+    </section>
 	
-	<section id="tribute-info-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste illo fugiat veritatis repudiandae eaque quasi ut atque nobis sit ea assumenda, illum voluptatibus, quos eligendi! Ipsam soluta tempore sed tenetur?</section>
+	<section id="tribute-info-3">
+        <p>To make the image as a background this is the CSS used</p>
+        <code><br>
+            *{<br>
+                margin: 0;<br>
+                padding: 0;<br>
+            }<br><br>
+            img{<br>
+                display: block;<br>
+                z-index: -1000;<br>
+                max-width: 100%;<br>
+                height: auto;<br>
+                margin: 0 auto;<br>
+            }<br>
+        </code>
+
+
+    </section>
     <footer>
-        <a href="google.com" id="tribute-link" target="_blank">link</a>
+        <a href="https://source.unsplash.com/random/" id="tribute-link" target="_blank">get a random Unsplash image</a>
     </footer>
     </main>
 	<script defer type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 	<script type="text/javascript">
-	function showlayer(layer){
-			layers = ['tribute-info', 'tribute-info-2', 'tribute-info-3'];
-			for e in layers{
-				document.getElementById(layer).style.visibility = 'hidden';	
+    function hidesections(){
+        layers = ['tribute-info', 'tribute-info-2', 'tribute-info-3'];
+			for (element of layers){
+				document.getElementById(element).style.visibility = 'hidden';	
 			}
-			document.getElementById(layer).style.visibility = 'visible';
-		}
+    }
+        function showlayer(layer){
+            hidesections()
+            document.getElementById(layer).style.visibility = 'visible';
+            }
 	</script>
 </body>
 </html>
