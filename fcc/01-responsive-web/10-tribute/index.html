@@ -81,16 +81,17 @@
     </main>
 	<script defer type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 	<script type="text/javascript">
-    function hidesections(){
-        layers = ['tribute-info', 'tribute-info-2', 'tribute-info-3'];
-			for (element of layers){
-				document.getElementById(element).style.visibility = 'hidden';	
-			}
-    }
+        function hidesections(){
+            layers = ['tribute-info', 'tribute-info-2', 'tribute-info-3'];
+                for (element of layers){
+                    document.getElementById(element).style.visibility = 'hidden';	
+                }
+        }
         function showlayer(layer){
             hidesections()
             document.getElementById(layer).style.visibility = 'visible';
             }
+        showlayer('tribute-info');
 	</script>
 </body>
 </html>
